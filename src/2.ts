@@ -34,8 +34,8 @@ export async function solve(): Promise<number> {
   const pairs: [Rule, string][] = lines.map(parseLine);
 
   // Part 1:
-  // return pairs.map(([r, s]) => r.validate(s)).map(v => v ? 1 : 0).reduce((a, b) => a + b);
+  // return pairs.map(([r, s]) => r.validate(s)).map(v => v ? 1 : 0).reduce((a, b) => a + b, 0);
 
   // Part 2:
-  return pairs.map(([r, s]) => r.validate2(s)).map(v => v ? 1 : 0).reduce((a, b) => a + b);
+  return pairs.map(([r, s]) => r.validate2(s)).map(v => v ? 1 : 0).reduce((a, b) => a + b, 0);
 }

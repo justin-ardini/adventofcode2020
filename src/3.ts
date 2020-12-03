@@ -1,3 +1,4 @@
+import parseGrid from './util/grid';
 import readlines from './util/readlines';
 
 /** Counts the number of trees along the given slope. */
@@ -15,15 +16,7 @@ function countTrees(grid: boolean[][], right: number, down: number): number {
 
 export async function solve(): Promise<number> {
   const lines = await readlines('./data/3.txt');
-  let grid: boolean[][] = [];  // true === tree
-  for (let line of lines) {
-    let row: boolean[] = [];
-    for (let c = 0; c < line.length; ++c) {
-      let v = line[c] === '#';
-      row.push(v);
-    }
-    grid.push(row);
-  }
+  const grid: boolean[][] = parseGrid(lines, (v) => v === '#');
 
   // Part 1:
   // return countTrees(grid, 3, 1);

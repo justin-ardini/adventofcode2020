@@ -1,4 +1,5 @@
 import readlines from './util/readlines';
+import {max} from './util/arrays';
 
 function search(input: string, min: number, max: number): number {
   if (min >= max) {
@@ -34,7 +35,7 @@ export async function solve(): Promise<number> {
   const seats = lines.map(seatId);
 
   // Part 1:
-  // return seats.reduce((a, b) => a > b ? a : b);
+  // return max(seats, -1);
 
   // Part 2:
   return findMissingSeat(seats);

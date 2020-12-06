@@ -1,9 +1,5 @@
 import readlines from './util/readlines';
 
-function foo(seats: number[]): number {
-  return 0;
-}
-
 /** Returns each group as a Set of either shared 'Yes' answers or all 'Yes' answers. */
 function parseGroups(lines: string[], includeAllAnswers: boolean): Set<string>[] {
   let groups: Set<string>[] = [];

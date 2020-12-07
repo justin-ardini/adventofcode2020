@@ -53,9 +53,8 @@ function backwardsMap(pairs: [string, Bags[]][]): Map<string, string[]> {
 
 /** bfs over all containing bags. */
 function pathsToBag(bag: string, m: Map<string, string[]>): number {
-  const start = m.get(bag);
   const added = new Set();
-  let q = [...start];
+  let q = [...m.get(bag)];
   while (q.length != 0) {
     let currBag = q.shift()!;
     added.add(currBag);
@@ -69,10 +68,8 @@ function pathsToBag(bag: string, m: Map<string, string[]>): number {
 
 /** bfs over all contained bags, keeping track of quantities. */
 function totalBags(bag: string, m: Map<string, Bags[]>): number {
-  const start = m.get(bag);
   let total = 0;
-  let q = [...start];
-  console.log(q);
+  let q = [...m.get(bag)];
   while (q.length != 0) {
     let currBag = q.shift()!;
     total += currBag.n;
@@ -86,7 +83,7 @@ function totalBags(bag: string, m: Map<string, Bags[]>): number {
 
 export async function solve(): Promise<number> {
   const lines = await readlines('./data/7.txt');
-  const pairs: [string, Bags[]] = lines.map(parseLine);
+  const pairs: [string, Bags[]][] = lines.map(parseLine);
 
   // Part 1:
   // return pathsToBag('shiny gold', backwardsMap(pairs));

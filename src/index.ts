@@ -1,5 +1,5 @@
 import express from 'express';
-import {solve} from './7';
+import {solve} from './8';
 
 const app = express();
 

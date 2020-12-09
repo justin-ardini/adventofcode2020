@@ -1,5 +1,5 @@
 import readlines from './util/readlines';
-import {max} from './util/arrays';
+import {sortNumeric, max} from './util/arrays';
 
 function search(input: string, min: number, max: number): number {
   if (min >= max) {
@@ -20,8 +20,7 @@ function seatId(line: string): number {
 }
 
 function findMissingSeat(seats: number[]): number {
-  const sorted = [...seats];
-  sorted.sort((a, b) => a - b);
+  const sorted = sortNumeric(seats);
   for (let i = 1; i < sorted.length; ++i) {
     if (sorted[i] - sorted[i - 1] !== 1) {
       return sorted[i - 1] + 1;

@@ -70,7 +70,7 @@ function fixProgram(program: [string, number][]): number|null {
     if (op === 'acc') {
       continue;
     }
-    let fixedProgram = program.map(op => [op[0], op[1]]);
+    let fixedProgram: [string, number][] = program.map(op => [op[0], op[1]]);
     if (op === 'jmp') {
       fixedProgram[i][0] = 'nop';
     } else {

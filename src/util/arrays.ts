@@ -1,10 +1,18 @@
 
 export function min<T>(arr: T[], defaultVal: T): T {
-  return arr.reduce((a, b) => a <= b ? a : b, defaultVal);
+  return arr.reduce((a, b) => b < a ? b : a, defaultVal);
 }
 
 export function max<T>(arr: T[], defaultVal: T): T {
-  return arr.reduce((a, b) => a >= b ? a : b, defaultVal);
+  return arr.reduce((a, b) => b > a ? b : a, defaultVal);
+}
+
+export function minWithIndex<T>(arr: T[], defaultVal: T): [T, number] {
+  return arr.reduce((acc, b, i) => b < acc[0] ? [b, i] : acc, [defaultVal, -1]);
+}
+
+export function maxWithIndex<T>(arr: T[], defaultVal: T): [T, number] {
+  return arr.reduce((acc, b, i) =>  b > acc[0] ? [b, i] : acc, [defaultVal, -1]);
 }
 
 export function sum(arr: number[]): number {

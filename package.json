@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "tsc & node .",
-    "dev": "tsc -w & nodemon dist/index.js"
+    "dev": "nodemon src/index.ts"
   },
   "repository": {
     "type": "git",

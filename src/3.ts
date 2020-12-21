@@ -1,5 +1,5 @@
-import parseGrid from './util/grid';
 import readlines from './util/readlines';
+import {parseGrid} from './util/grids';
 
 /** Counts the number of trees along the given slope. */
 function countTrees(grid: boolean[][], right: number, down: number): number {
